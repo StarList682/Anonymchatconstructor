@@ -1,0 +1,12 @@
+services:
+  - type: worker           # «Background Worker» – идеально для Telegram-бота
+    name: anon-chat-creator
+    env: python
+    plan: free
+    region: frankfurt      # или любой другой free-регион
+    buildCommand:  ""      # pip install выполняется автоматически
+    startCommand:  "python main.py"
+    autoDeploy: true
+    envVars:
+      - key: CONSTRUCTOR_TOKEN
+        value: 7952794259:AAHCLUk7Zw-DOqfJSFWrda4rOjWp3B_CqQY
